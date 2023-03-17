@@ -1,0 +1,81 @@
+@import './vars';
+
+.nav__container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem .8rem;
+  font-size: 1.3em;
+
+  .nav__logo {
+    font-size: 1.2em;
+
+    .nav__span {
+      color: var(--color-principal);
+    }
+  }
+
+  .nav__ul {
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+
+    .nav__link {
+      transition: .5s;
+    }
+
+    .link__home {
+      font-size: 1.2em;
+    }
+
+    .link__card {
+      position: relative;
+      font-size: 1.3em;
+      color: var(--color-principal);
+
+      .nav__p {
+        color: var(--color-principal);
+        background-color: var(--black);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        width: 1rem;
+        font-size: .8rem;
+        position: absolute;
+        top: -.2rem;
+        right: -.3rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .nav__container {
+    .nav__logo {
+      font-size: 1.8em;
+    }
+
+    .nav__ul {
+      .nav__link:hover {
+        transition: .5s;
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .nav__container {
+    .nav__logo {
+      font-size: 2em;
+    }
+
+    .nav__ul {
+      width: 20%;
+    }
+  }
+}

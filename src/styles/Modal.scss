@@ -1,0 +1,161 @@
+@import './vars';
+
+.modal__container {
+  background-color: rgba(0, 0, 0, .7);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .modal__layout {
+    background-color: var(--color-secondary);
+    position: relative;
+    border-radius: .5rem;
+    width: 95%;
+    height: 97%;
+    padding: .6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5rem;
+    animation: fadeIn 0.3s ease forwards;
+
+    .modal__img {
+      margin: 0 auto;
+      border-radius: .5rem;
+    }
+
+    .modal__info {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .modal__title {
+        font-size: 3rem;
+        text-align: center;
+      }
+
+      .modal__description {
+        margin: 0 auto;
+        font-size: 1.1rem;
+        text-align: center;
+      }
+
+      .modal__container__price {
+        display: flex;
+        justify-content: center;
+
+        .modal__price {
+          font-size: 2.5rem;
+        }
+      }
+    }
+
+    .modal__close {
+      cursor: pointer;
+      font-size: 2rem;
+      border-radius: 50%;
+      padding: .1rem;
+      position: absolute;
+      top: .5rem;
+      right: .5rem;
+      transition: .3s;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .modal__container {
+    .modal__layout {
+      .modal__img {
+        width: 80%;
+      }
+
+      .modal__close {
+        top: 1rem;
+        right: 1rem;
+      }
+
+      .modal__close:hover {
+        transition: .4s;
+        transform: rotate(360deg) scale(1.1);
+        background-color: var(--color-principal);
+        color: var(--color-secondary);
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .modal__container {
+    .modal__layout {
+      .modal__img {
+        width: 60%;
+      }
+
+      .modal__info {
+        .modal__description {
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .modal__container {
+    .modal__layout {
+      flex-direction: row;
+      align-items: center;
+
+      .modal__img {
+        width: 40%;
+      }
+
+      .modal__info {
+        width: 50%;
+
+        .modal__title {
+          font-size: 3.5rem;
+        }
+
+        .modal__description {
+          font-size: 1.4rem;
+        }
+
+        .modal__container__price {
+          .modal__price {
+            font-size: 3rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.fadeOut {
+  animation: fadeOut 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0);
+  }
+}
