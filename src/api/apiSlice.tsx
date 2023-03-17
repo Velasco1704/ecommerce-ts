@@ -4,7 +4,7 @@ import { type Product } from "@interfaces/Products.interface";
 export const productsApi = createApi({
   reducerPath: "productsApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: import.meta.env.VITE_API,
+    baseUrl: 'https://ecommerce-ts-products-bk-production.up.railway.app',
   }),
   endpoints: (builder) => ({
     getProducts: builder.query<Product[], undefined>({
